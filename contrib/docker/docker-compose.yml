@@ -44,7 +44,9 @@ services:
 
   datapusher:
     container_name: datapusher
-    image: clementmouchet/datapusher
+    build:
+      context: ../../
+      dockerfile: contrib/docker/datapusher/Dockerfile
     ports:
       - "8800:8800"
 

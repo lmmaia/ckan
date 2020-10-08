@@ -16,7 +16,7 @@ PORT = os.environ.get('DATAPUSHER_PORT', 8800)
 
 # Database
 
-SQLALCHEMY_DATABASE_URI = postgresql://datapusher_jobs@localhost/datapusher_jobs
+SQLALCHEMY_DATABASE_URI = 'postgresql://datapusher_jobs:ckan@localhost/datapusher_jobs'
 
 # Download and streaming settings
 

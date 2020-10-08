@@ -261,11 +261,11 @@ class PackageSearchIndex(SearchIndex):
         # modify dates (SOLR is quite picky with dates, and only accepts ISO dates
         # with UTC time (i.e trailing Z)
         # See http://lucene.apache.org/solr/api/org/apache/solr/schema/DateField.html
-        if 'metadata_created' not in pkg_dict:
+        if 'metadata_created' not in pkg_dict or pkg_dict['metadata_created'] is None:
             pkg_dict['metadata_created'] = datetime.datetime.now().replace(microsecond=0).isoformat()
-        if 'metadata_modified' not in pkg_dict:
+        if 'metadata_modified' not in pkg_dict or pkg_dict['metadata_modified'] is None:
             pkg_dict['metadata_modified'] = datetime.datetime.now().replace(microsecond=0).isoformat()
-            
+
         pkg_dict['metadata_created'] += 'Z'
         pkg_dict['metadata_modified'] += 'Z'
 
